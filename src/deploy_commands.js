@@ -3,7 +3,7 @@
  */
 
 const { REST, Routes } = require("discord.js");
-const { clientID, guildID, token } = require("./config.json");
+const { clientId, guildId, token } = require("./config.json");
 const fs = require("node:fs");
 
 const commands = [];
@@ -22,7 +22,7 @@ const rest = new REST({ version: "10" }).setToken(token);
 		console.log(`[ UPDATE ] Started refreshing ${commands.length} application (/) commands.`);
 
 		const data = await rest.put(
-			Routes.applicationGuildCommands(clientID, guildID),
+			Routes.applicationGuildCommands(clientId, guildId),
 			{ body: commands },
 		);
 

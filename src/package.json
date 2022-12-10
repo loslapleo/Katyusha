@@ -1,3 +1,6 @@
 {
-	"main": "index.js"
+	"main": "index.js",
+	"dependencies": {
+		"discord.js": "^14.7.1"
+	}
 }
