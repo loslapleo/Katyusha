@@ -21,7 +21,6 @@ module.exports = {
 		} catch (error) {
 			console.error(error);
 			await interaction.reply({ content: `[ ERROR ] Could not execute ${interaction.commandName}.`});
-			console.error(error);
 		}
 	},
 };

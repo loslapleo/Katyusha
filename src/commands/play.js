@@ -3,7 +3,7 @@
  *
  * <song>: song that is to be played
  *
- * Plays song specified using YouTube.
+ * Plays song that was requested by the user.
  */
 
 const { SlashCommandBuilder } = require("discord.js");
@@ -18,6 +18,6 @@ module.exports = {
 			.setRequired(true)),
 	async execute(interaction) {
 		const song = interaction.options.getString("song");
-		await interaction.reply(`${song}`);
+		await interaction.reply(`You wanted to play \"${song}\"!`);
 	},
 };
