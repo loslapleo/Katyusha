@@ -1,3 +1,3 @@
 # Deploys all commands before starting Katyusha
-node src/deploy-commands.js
+node src/deployCommands.js
 node src/index.js
