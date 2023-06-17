@@ -1,8 +1,6 @@
 /*
  * This is the music player. It handles all song queries, queues and general
  * functions that would be expected from a music player.
- *
- * Credit: https://www.geeksforgeeks.org/implementation-queue-javascript/
  */
 
 class MusicPlayer {
@@ -14,7 +12,7 @@ class MusicPlayer {
 		this.backIndex++;
 
 		// TODO debug
-		this.getQueue();
+		this.printQueue();
 	}
 
 	// Plays song that is first in queue.
@@ -32,14 +30,10 @@ class MusicPlayer {
 		delete this.songs[this.frontIndex];
 		this.frontIndex++;
 
-		if (this.frontIndex == this.backIndex) {
-			this.songs = [];
-			this.frontIndex = 0;
-			this.backIndex = 0;
-		}
+		if (this.frontIndex == this.backIndex) this.resetQueue();
 
 		// TODO debug
-		this.getQueue();
+		this.printQueue();
 	}
 
 	// Stops playing current song and clears queue.
@@ -55,11 +49,6 @@ class MusicPlayer {
 
 	// Returns current song queue.
 	static getQueue() {
-		// TODO debug
-		let str = this.songs[0];
-		for (let i = 1; i < this.songs.length; i++) str += ", " + this.songs[i];
-		console.log(`[ DEBUG ] Queue: ${str}.`);
-
 		return this.songs;
 	}
 	
@@ -69,6 +58,14 @@ class MusicPlayer {
 		this.frontIndex = 0;
 		this.backIndex = 0;
 		return;
+	}
+
+	// Debug function that prints the current queue to console.
+	static printQueue() {
+		let str = this.songs[0];
+		for (let i = 1; i < this.songs.length; i++) str += ", " + this.songs[i];
+		if (str == undefined) console.log(`[ DEBUG ] Queue: <empty>`);
+		else console.log(`[ DEBUG ] Queue: ${str}.`);
 	}
 }
 
