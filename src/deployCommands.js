@@ -2,9 +2,14 @@
  * This file deploys all commands.
  */
 
-const { REST, Routes } = require("discord.js");
-const { clientId, guildId, token } = require("./config.json");
 const fs = require("node:fs");
+const { REST, Routes } = require("discord.js");
+// Use this if you're running it locally.
+// const { clientId, guildId, token } = require("./config.json");
+// Use these if you're running form Replit.
+const clientId = process.env["clientId"]; 
+const guildId = process.env["guildId"];
+const token = process.env["token"]; 
 
 const commands = [];
 const commandFiles = fs.readdirSync("./src/commands").filter(file =>
