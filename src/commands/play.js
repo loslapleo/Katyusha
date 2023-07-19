@@ -7,7 +7,6 @@
  */
 
 const { SlashCommandBuilder } = require("discord.js");
-const MusicPlayer = require("../utils/MusicPlayer");
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -22,7 +21,10 @@ module.exports = {
 			"You must be in a voice channel to play something!");
 
 		const song = interaction.options.getString("song");
-		MusicPlayer.add(song);
-		await interaction.reply(`You wanted to play \"${song}\"!`);
+		await interaction.client.distube.play(interaction.member.voice.channel, song, {
+			member: interaction.member,
+			textChannel: interaction.channel,
+			interaction,
+		});
 	},
 };

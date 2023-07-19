@@ -4,12 +4,19 @@
 
 const fs = require("node:fs");
 const { REST, Routes } = require("discord.js");
-// Use this if you're running it locally.
-// const { clientId, guildId, token } = require("./config.json");
-// Use these if you're running form Replit.
-const clientId = process.env["clientId"]; 
-const guildId = process.env["guildId"];
-const token = process.env["token"]; 
+
+let clientId;
+let guildId;
+let token;
+if (process.argv[1] == "remote") { // Running from Replit.
+	clientId = process.env["clientId"];
+	guildId = process.env["guildId"];
+	token = process.env["token"];
+} else { // Running locally.
+	clientId = require("./config.json").clientId;
+	guildId = require("./config.json").guildId;
+	token = require("./config.json").token;
+}
 
 const commands = [];
 const commandFiles = fs.readdirSync("./src/commands").filter(file =>
