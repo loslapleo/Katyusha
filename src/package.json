@@ -9,7 +9,6 @@
 		"@distube/ytdl-core": "^4.11.12",
 		"discord.js": "^14.11.0",
 		"distube": "^4.0.4",
-		"libsodium-wrappers": "^0.7.11",
-		"sodium": "^3.0.2"
+		"libsodium-wrappers": "^0.7.11"
 	}
 }

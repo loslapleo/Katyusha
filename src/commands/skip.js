@@ -14,7 +14,14 @@ module.exports = {
 		if (!interaction.member.voice.channel) return await interaction.reply(
 			"You must be in a voice channel to skip current song!");
 
-		await interaction.client.distube.skip("Skipping song ...");
-		await interaction.client.distube.skip("");
+		let queue = interaction.client.distube.getQueue(interaction);
+		if (!queue) return await interaction.reply("No songs playing ...");
+		if (queue.autoplay || queue.songs.length > 1) {
+			interaction.client.distube.skip(interaction);
+			await interaction.reply("Skipped song ...");
+		} else {
+			interaction.client.distube.stop(interaction);
+			await interaction.reply("Skipped song ...");
+		}
 	},
 };
