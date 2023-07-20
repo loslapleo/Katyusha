@@ -14,6 +14,7 @@ module.exports = {
 		if (!interaction.member.voice.channel) return await interaction.reply(
 			"You must be in a voice channel to skip current song!");
 
-		await interaction.client.distube.skip("Skipped ...");
+		await interaction.client.distube.skip("Skipping song ...");
+		await interaction.client.distube.skip("");
 	},
 };

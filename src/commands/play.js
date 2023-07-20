@@ -21,6 +21,7 @@ module.exports = {
 			"You must be in a voice channel to play something!");
 
 		const song = interaction.options.getString("song");
+		await interaction.reply("Adding song ...");
 		await interaction.client.distube.play(interaction.member.voice.channel, song, {
 			member: interaction.member,
 			textChannel: interaction.channel,
