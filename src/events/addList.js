@@ -6,8 +6,9 @@ module.exports = {
 	name: "addList",
 	distube: true,
 	async execute(queue, playlist) {
-		queue.textChannel.send(
-			`Added \`${playlist.name}\` playlist (${playlist.songs.length} songs) to the queue by ${song.user}`
-		);
+		const embed = new EmbedBuilder()
+		.setDescription(`Added \`${playlist.name}\` playlist (${playlist.songs.length} songs) to the queue by: ${song.user}`)
+		.setColor("#edea18");
+		queue.textChannel.send({ embeds: [embed] });
 	},
 };

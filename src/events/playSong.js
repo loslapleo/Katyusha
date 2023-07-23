@@ -11,7 +11,6 @@ module.exports = {
 		const embed = new EmbedBuilder()
 		.setDescription(`Playing \`${song.name}\` - \`${song.formattedDuration}\`\nRequested by: ${song.user}`)
 		.setColor("#edea18");
-
 		queue.textChannel.send({ embeds: [embed] });
 	},
 };

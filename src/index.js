@@ -28,9 +28,9 @@ module.exports = client;
 
 // DisTube setup.
 client.distube = new DisTube(client, {
-	leaveOnEmpty: false,
-	leaveOnStop: false,
-	leaveOnFinish: false,
+	leaveOnEmpty: true,
+	leaveOnStop: true,
+	leaveOnFinish: true,
 	emitNewSongOnly: true,
 	emitAddSongWhenCreatingQueue: false,
 	emitAddListWhenCreatingQueue: false,
