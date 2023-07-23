@@ -2,6 +2,8 @@
  * Event: Triggers when a new song is added to queue.
  */
 
+const { EmbedBuilder } = require("discord.js");
+
 module.exports = {
 	name: "addSong",
 	distube: true,

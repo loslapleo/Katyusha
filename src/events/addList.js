@@ -2,6 +2,8 @@
  * Event: Triggers when a new list of songs is added to queue.
  */
 
+const { EmbedBuilder } = require("discord.js");
+
 module.exports = {
 	name: "addList",
 	distube: true,
