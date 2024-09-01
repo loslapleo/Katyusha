@@ -22,6 +22,14 @@ dependencies {
 
     // This dependency is used by the application.
     implementation("com.google.guava:guava:30.1.1-jre")
+
+    implementation("net.dv8tion:JDA:5.1.0") { // replace $version with the latest version
+        // Optionally disable audio natives to reduce jar size by excluding `opus-java`
+        // Gradle DSL:
+        // exclude module: 'opus-java'
+        // Kotlin DSL:
+        // exclude(module="opus-java")
+    }
 }
 
 application {
